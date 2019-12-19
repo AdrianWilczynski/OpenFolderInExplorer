@@ -1,0 +1,57 @@
+{
+	"name": "open-folder-in-explorer",
+	"displayName": "Open Folder in Explorer",
+	"description": "",
+	"publisher": "adrianwilczynski",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.41.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.openFolderInExplorer"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.openFolderInExplorer",
+				"title": "Open in Explorer",
+				"enablement": "explorerResourceIsFolder"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "extension.openFolderInExplorer",
+					"when": "explorerResourceIsFolder",
+					"group": "navigation@6"
+				}
+			],
+			"commandPalette": [
+				{
+					"command": "extension.openFolderInExplorer",
+					"when": "false"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.7",
+		"@types/node": "^12.11.7",
+		"@types/vscode": "^1.41.0",
+		"glob": "^7.1.5",
+		"mocha": "^6.2.2",
+		"typescript": "^3.6.4",
+		"tslint": "^5.20.0",
+		"vscode-test": "^1.2.2"
+	}
+}
