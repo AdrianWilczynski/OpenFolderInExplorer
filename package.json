@@ -1,8 +1,13 @@
 {
 	"name": "open-folder-in-explorer",
 	"displayName": "Open Folder in Explorer",
-	"description": "",
+	"description": "Open folder in explorer from context menu",
+	"icon": "img/icon.png",
 	"publisher": "adrianwilczynski",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/AdrianWilczynski/OpenFolderInExplorer.git"
+	},
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.41.0"
