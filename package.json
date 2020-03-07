@@ -16,7 +16,8 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.openFolderInExplorer"
+		"onCommand:extension.openFolderInExplorer",
+		"onCommand:extension.openFolderInNewInstance"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -25,6 +26,11 @@
 				"command": "extension.openFolderInExplorer",
 				"title": "Open in Explorer",
 				"enablement": "explorerResourceIsFolder"
+			},
+			{
+				"command": "extension.openFolderInNewInstance",
+				"title": "Open in New Instance",
+				"enablement": "explorerResourceIsFolder && config.openFolderInExplorer.enableOpenFolderInNewInstance"
 			}
 		],
 		"menus": {
@@ -33,14 +39,33 @@
 					"command": "extension.openFolderInExplorer",
 					"when": "explorerResourceIsFolder",
 					"group": "navigation@6"
+				},
+				{
+					"command": "extension.openFolderInNewInstance",
+					"when": "explorerResourceIsFolder && config.openFolderInExplorer.enableOpenFolderInNewInstance",
+					"group": "navigation@7"
 				}
 			],
 			"commandPalette": [
 				{
 					"command": "extension.openFolderInExplorer",
 					"when": "false"
+				},
+				{
+					"command": "extension.openFolderInNewInstance",
+					"when": "false"
 				}
 			]
+		},
+		"configuration": {
+			"properties": {
+				"openFolderInExplorer.enableOpenFolderInNewInstance": {
+					"title": "Enable \"Open in New Instance\"",
+					"description": "Add \"Open in New Instance\" to Explorer's context menu.",
+					"type": "boolean",
+					"default": false
+				}
+			}
 		}
 	},
 	"scripts": {
