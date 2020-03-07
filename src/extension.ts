@@ -19,7 +19,7 @@ export function activate(context: vscode.ExtensionContext) {
 			cp.execSync(`${command} "${uri.fsPath}"`);
 		}),
 		vscode.commands.registerCommand('extension.openFolderInNewInstance', (uri: vscode.Uri) => {
-			vscode.commands.executeCommand("vscode.openFolder", uri, true);
+			vscode.commands.executeCommand('vscode.openFolder', uri, true);
 		}));
 }
 
