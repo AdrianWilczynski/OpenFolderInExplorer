@@ -24,7 +24,7 @@
 		"commands": [
 			{
 				"command": "extension.openFolderInExplorer",
-				"title": "Open in Explorer",
+				"title": "Open in File Explorer",
 				"enablement": "explorerResourceIsFolder"
 			},
 			{
